@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUMU Fashions - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">MF</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shirts.html">Shirts</a></li>
+                <li><a href="trousers.html">Trousers</a></li>
+                <li><a href="bookings.html">My Bookings (<span id="bookingCount">0</span>)</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button id="darkModeToggle" class="mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button id="searchToggleFloat" class="search-float" aria-label="Toggle Search">
+        <i class="fas fa-search"></i>
+    </button>
+
+    <div class="search-overlay" id="searchOverlay">
+        <input type="text" id="searchInput" placeholder="Search for shirts, trousers..." aria-label="Search products">
+        <button id="closeSearch" aria-label="Close search">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="searchResults" class="search-results-dropdown">
+            <p class="empty-message" style="display:none;">No results found.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="promo-carousel-section">
+            <div class="carousel-container" id="promoCarousel">
+                <div class="carousel-slide">
+                    <img src="https://img.freepik.com/free-photo/view-hawaiian-shirt-with-garland-smartwatch_23-2149366026.jpg?t=st=1749523085~exp=1749526685~hmac=8ab7af265c0d62d9417748affb6c2cdfc681c13b63b75467b98957b67c029c24&w=1380" alt="New Collection">
+                    <div class="carousel-caption">
+                        <h3>Discover Our Latest Styles!</h3>
+                        <p>Explore the freshest designs in shirts and trousers.</p>
+                        <a href="shirts.html" class="btn carousel-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://via.placeholder.com/1200x500?text=Sale+Banner" alt="Summer Sale">
+                    <div class="carousel-caption">
+                        <h3>Summer Sale - Up to 30% Off!</h3>
+                        <p>Limited time offers on selected items.</p>
+                        <a href="trousers.html" class="btn carousel-btn">View Sale</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://via.placeholder.com/1200x500?text=Custom+Tailoring+Banner" alt="Custom Tailoring">
+                    <div class="carousel-caption">
+                        <h3>Custom Tailoring Services</h3>
+                        <p>Get the perfect fit with our bespoke tailoring.</p>
+                        <a href="contact.html" class="btn carousel-btn">Inquire Now</a>
+                    </div>
+                </div>
+                </div>
+
+            <button class="carousel-control prev" aria-label="Previous slide">&#10094;</button>
+            <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
+
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="hero">
+            <h1>Elegance Redefined for the Modern Gentleman</h1>
+            <p>Discover sophisticated shirts and impeccably tailored trousers designed for distinction.</p>
+            <div class="hero-buttons">
+                <a href="shirts.html" class="btn primary-btn">Explore Shirts</a>
+                <a href="trousers.html" class="btn secondary-btn">Discover Trousers</a>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h2 style="text-align: center;">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="images/70k (6).png" alt="Featured Shirt">
+                    <h3>Classic White Shirt</h3>
+                    <p class="price">$65.00</p>
+                    <a href="product-details.html?id=shirt-001" class="btn view-details-btn">View Details</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x300?text=Featured+Trousers" alt="Featured Trousers">
+                    <h3>Classic Wool Trousers</h3>
+                    <p class="price">$85.00</p>
+                    <a href="product-details.html?id=trousers-001" class="btn view-details-btn">View Details</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/300x300?text=Featured+Trousers" alt="Featured Trousers">
+                    <h3>Classic Wool Trousers</h3>
+                    <p class="price">$85.00</p>
+                    <a href="product-details.html?id=trousers-001" class="btn view-details-btn">View Details</a>
+                </div>
+              
+        </section>
+    </main>
+
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+            <p>&copy; 2025 MUMU Fashions. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/your_facebook_page" target="_blank" aria-label="Visit us on Facebook" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/your_instagram_page" target="_blank" aria-label="Visit us on Instagram" class="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/your_twitter_page" target="_blank" aria-label="Visit us on Twitter" class="twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+
+
+</body>
+</html>

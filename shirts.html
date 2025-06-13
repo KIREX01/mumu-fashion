@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUMU Fashions - Shirts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MF</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shirts.html">Shirts</a></li>
+                <li><a href="trousers.html">Trousers</a></li>
+                <li><a href="bookings.html">My Bookings (<span id="bookingCount">0</span>)</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button id="darkModeToggle" class="mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <button id="searchToggleFloat" class="search-float" aria-label="Toggle Search">
+        <i class="fas fa-search"></i>
+    </button>
+
+    <div class="search-overlay" id="searchOverlay">
+        <input type="text" id="searchInput" placeholder="Search for shirts, trousers..." aria-label="Search products">
+        <button id="closeSearch" aria-label="Close search">
+            <i class="fas fa-times"></i>
+        </button>
+        <div id="searchResults" class="search-results-dropdown">
+            <p class="empty-message" style="display:none;">No results found.</p>
+        </div>
+    </div>
+
+    <main>
+        <section class="products">
+            <h2>Our Gentlemen's Shirts</h2>
+
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="images/shirt (1).png" alt="Two-Tone Contrast Embroidered Shirt">
+                    <h3>Two-Tone Contrast Embroidered Shirt</h3>
+                    <p class="price">$55.00</p>
+                    <a href="product-details.html?id=shirt-001" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (2).png" alt="Tropical Breeze Button-Up Shirt">
+                    <h3>Tropical Breeze Button-Up Shirt</h3>
+                    <p class="price">$60.00</p>
+                    <a href="product-details.html?id=shirt-002" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (3).png" alt="Azure Paradise Floral Shirt">
+                    <h3>Azure Paradise Floral Shirt</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-003" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (4).png" alt="Midnight Bloom Aloha Shirt">
+                    <h3>Midnight Bloom Aloha Shirt</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-004" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (5).png" alt="Multi-Tone Textured Polo Shirt">
+                    <h3>Multi-Tone Textured Polo Shirt <br> (Multi-Pack)</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-005" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (6).png" alt="Dynamic Stripe Polo Shirt (Multi-Color Pack)">
+                    <h3>Dynamic Stripe Polo Shirt <br> (Multi-Pack)</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-006" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (7).png" alt="Retro Stripe Polo Shirt (Multi-Pack)">
+                    <h3>Retro Stripe Polo Shirt <br> (Multi-Pack)</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-007" class="btn view-details-btn">View Details</a>
+                </div>
+
+                
+                <div class="product-item">
+                    <img src="images/shirt (8).png" alt="Tropical Bloom Azure Shirt">
+                    <h3>Tropical Bloom Azure Shirt</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-008" class="btn view-details-btn">View Details</a>
+                </div>
+                                
+                <div class="product-item">
+                    <img src="images/shirt (9).png" alt="Textured Berry Overshirt">
+                    <h3>Textured Berry Overshirt</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-009" class="btn view-details-btn">View Details</a>
+                </div>
+
+                
+                <div class="product-item">
+                    <img src="images/shirt (10).png" alt="Classic Crisp White Button-Down Shirt">
+                    <h3>Classic Crisp White Button-Down Shirt</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-010" class="btn view-details-btn">View Details</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/shirt (11).png" alt="Sporty Stripe Polo Shirt ">
+                    <h3>Sporty Stripe Polo Shirt <br> (Multi-Pack)</h3>
+                    <p class="price">$70.00</p>
+                    <a href="product-details.html?id=shirt-011" class="btn view-details-btn">View Details</a>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <footer>
+            <p>&copy; 2025 MUMU Fashions. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/your_facebook_page" target="_blank" aria-label="Visit us on Facebook" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/your_instagram_page" target="_blank" aria-label="Visit us on Instagram" class="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/your_twitter_page" target="_blank" aria-label="Visit us on Twitter" class="twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                </div>
+    </footer>
+
+    
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+
+
+</body>
+</html>
