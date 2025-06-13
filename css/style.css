@@ -1732,3 +1732,78 @@ body.dark-mode .search-overlay #closeSearch {
         width: 95%;
     }
 }
+
+/* --- 404 Page Specific Styles --- */
+.four-oh-four-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Adjust min-height: 100vh minus header/footer heights for full-page center */
+    min-height: calc(100vh - 150px); /* Approx 100vh - (header_height + footer_height) */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error-container {
+    max-width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out; /* Add a subtle fade-in animation */
+}
+
+/* Dark mode for 404 container */
+body.dark-mode .error-container {
+    background-color: #2e2e2e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-container h1 {
+    font-size: 3em;
+    color: #dc3545; /* A clear error color (red) */
+    margin-bottom: 20px;
+}
+
+/* Dark mode for 404 heading */
+body.dark-mode .error-container h1 {
+    color: #ff7675; /* Lighter red for dark mode */
+}
+
+.error-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.error-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.error-search-suggestion {
+    margin-top: 20px;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments for 404 page */
+@media (max-width: 768px) {
+    .error-container h1 {
+        font-size: 2.5em;
+    }
+    .error-container {
+        padding: 20px;
+    }
+    .error-actions {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 10px;
+    }
+}

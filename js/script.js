@@ -572,5 +572,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializeCarousel();
 
+
     initializeSearch(); // Call search initializer
+
+     // --- 404 Page Specific Logic: Trigger Search from Button ---
+    const triggerSearchBtn = document.getElementById('triggerSearch');
+    if (triggerSearchBtn && searchOverlay && searchInput) { // Ensure elements exist
+        triggerSearchBtn.addEventListener('click', () => {
+            searchOverlay.classList.add('active'); // Open the search overlay
+            searchInput.focus(); // Focus the search input
+
+            // Also, close the hamburger menu if it's open, to avoid overlap
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    }
 });
