@@ -264,7 +264,7 @@ body.dark-mode .products h2 {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid */
     gap: 30px;
     justify-content: center;
 }

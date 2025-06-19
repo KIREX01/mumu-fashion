@@ -5,14 +5,14 @@ const allProducts = [
         id: 'shirt-001',
         category: 'shirt',
         name: 'Two-Tone Contrast Embroidered Shirt',
-        price: 55.00,
+        price: 80000.00,
         description: 'Make a bold statement with our Two-Tone Contrast Embroidered Shirt, a striking fusion of classic elegance and contemporary design. This unique shirt features a distinct half-and-half color block, combining a rich navy blue on one side with a crisp white on the other, creating an eye-catching visual appeal.',
         fabric: 'cotton-blend for a crisp look and comfortable wear',
         care: 'Machine wash cold, tumble dry low. Iron on medium heat.',
         sizes: ['S', 'M', 'L', 'XL', 'XXL'],
         images: [
             'images/shirt (1).png',
-            'https://via.placeholder.com/600x400?text=Classic+Shirt+Back'
+            'images/sub (8).png'
         ],
         similarProducts: ['shirt-002', 'trousers-001']
     },
@@ -20,14 +20,14 @@ const allProducts = [
         id: 'shirt-002',
         category: 'shirt',
         name: 'Tropical Breeze Button-Up Shirt',
-        price: 60.00,
+        price: 65000.00,
         description: 'Embrace effortless summer style with our Tropical Breeze Button-Up Shirt. This vibrant short-sleeve shirt features a striking all-over print of lush green and golden-yellow palm leaves against a crisp white background, instantly transporting you to a vacation state of mind.',
         fabric: 'lightweight cotton',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (2).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (10).png'
         ],
         similarProducts: ['shirt-008', 'trousers-002']
     },
@@ -35,14 +35,14 @@ const allProducts = [
         id: 'shirt-003',
         category: 'shirt',
         name: 'Azure Paradise Floral Shirt',
-        price: 60.00,
+        price: 65000.00,
         description: 'Dive into a vibrant summer with our Azure Paradise Floral Shirt. This eye-catching short-sleeve shirt boasts a lively print of dark blue and black hibiscus flowers interspersed with various shades of blue tropical leaves, all set against a refreshing light blue background.',
         fabric: 'lightweight cotton',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (3).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (4).png'
         ],
         similarProducts: ['shirt-007', 'trousers-003']
     },
@@ -50,14 +50,14 @@ const allProducts = [
         id: 'shirt-004',
         category: 'shirt',
         name: 'Midnight Bloom Aloha Shirt',
-        price: 60.00,
+        price: 65000.00,
         description: 'Step into laid-back sophistication with our Midnight Bloom Aloha Shirt. This captivating short-sleeve button-up features a rich navy blue background adorned with an intricate pattern of light blue foliage and elegant cream/beige floral blooms. Perfect for embracing warm weather in style, this shirt offers a relaxed yet refined look suitable for beach vacations, casual gatherings, or simply adding a touch of island charm to your everyday wardrobe. Its breathable fabric ensures comfort, while the vibrant print makes a statement.',
         fabric: 'lightweight cotton',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (4).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (3).png'
         ],
         similarProducts: ['shirt-003', 'trousers-004']
     },
@@ -65,14 +65,14 @@ const allProducts = [
         id: 'shirt-005',
         category: 'shirt',
         name: 'Multi-Tone Textured Polo Shirt (Available in Multiple Colorways)',
-        price: 60.00,
+        price: 70000.00,
         description: 'Elevate your casual wardrobe with our Multi-Tone Textured Polo Shirt, designed for both style and comfort. This sophisticated polo features distinct horizontal color blocking, combining a subtle textured pattern with a modern aesthetic. Available in several versatile color combinations, including a striking white, olive green, and camel tan mix, and a more subdued earth-toned variant, these shirts are perfect for a smart-casual look. Crafted from a breathable fabric, they offer a comfortable fit and a refined finish, making them ideal for everyday wear, weekend outings, or relaxed social gatherings',
         fabric: 'cotton blend, offering breathability and a comfortable feel. The texture appears to be a subtle repeating pattern, possibly a jacquard or pique knit',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (5).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (9).png'
         ],
         similarProducts: ['shirt-006', 'trousers-005']
     },
@@ -80,14 +80,14 @@ const allProducts = [
         id: 'shirt-006',
         category: 'shirt',
         name: 'Dynamic Stripe Polo Shirt (Multi-Color Pack)',
-        price: 60.00,
+        price: 70000.00,
         description: 'Add a vibrant touch to your casual wardrobe with our Dynamic Stripe Polo Shirts. These stylish polos feature a refreshing horizontal stripe pattern, combining varying widths and shades for a contemporary look. Available in a range of appealing color combinations—including a classic blue palette, an earthy green mix, and a striking burgundy variant—each shirt is designed for comfort and a flattering fit. Crafted from a textured, breathable fabric, these polos are perfect for everyday wear, casual outings, or weekend activities, offering a modern twist on a timeless classic.',
         fabric: 'cotton blend,mesh-like fabric',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (6).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (6).png'
         ],
         similarProducts: ['shirt-005', 'trousers-006']
     },
@@ -95,14 +95,14 @@ const allProducts = [
         id: 'shirt-007',
         category: 'shirt',
         name: 'Retro Stripe Polo Shirt (Multi-Pack)',
-        price: 60.00,
+        price: 70000.00,
         description: 'Infuse your wardrobe with a touch of retro charm with our Retro Stripe Polo Shirts. These stylish polos feature a classic vertical stripe pattern in various appealing color combinations, offering a vibrant yet timeless look. Available in a range of options, including a refreshing blue and white, a versatile green and white, a bold burgundy and white, and a sleek black and white, these shirts are crafted from a textured, breathable fabric for ultimate comfort. Perfect for casual outings, sports, or simply adding a dash of vintage flair to your everyday attire, these polos offer both style and ease.',
         fabric: 'a textured fabric',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (7).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (5).png'
         ],
         similarProducts: ['shirt-001', 'trousers-007']
     },
@@ -110,14 +110,14 @@ const allProducts = [
         id: 'shirt-008',
         category: 'shirt',
         name: 'Tropical Bloom Azure Shirt',
-        price: 60.00,
+        price: 70000.00,
         description: 'Immerse yourself in vibrant island vibes with our Tropical Bloom Azure Shirt. This striking short-sleeve button-up features an intricate all-over print of lush green and various blue palm leaves, accented with bursts of red-orange bird-of-paradise flowers and soft pink blossoms, all set against a rich azure blue background. Designed for a flattering fit and maximum comfort, this shirt is your go-to for embracing warm weather, whether you are heading to the beach, a casual party, or simply want to bring a piece of paradise to your everyday style.',
         fabric: 'a lightweight and breathable material cotton',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (8).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (2).png'
         ],
         similarProducts: ['shirt-011', 'trousers-001']
     },
@@ -125,14 +125,14 @@ const allProducts = [
         id: 'shirt-009',
         category: 'shirt',
         name: 'Textured Berry Overshirt',
-        price: 60.00,
+        price: 70000.00,
         description: 'Add a layer of distinctive style with our Textured Berry Overshirt. This eye-catching piece features a rich, deep berry (or magenta/maroon) color with a unique horizontal textured stripe pattern, adding depth and interest to the fabric. Designed to be worn as a versatile layering piece, it is perfect over a simple t-shirt for a relaxed yet stylish look. It includes classic shirt details like a point collar, full button-front closure, and two practical chest pockets with flaps. Ideal for transitioning seasons or adding a pop of color and texture to your casual ensemble.',
         fabric: 'linen blend with a woven horizontal textured',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (9).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (1).png'
         ],
         similarProducts: ['shirt-010', 'trousers-002']
     },
@@ -140,14 +140,14 @@ const allProducts = [
         id: 'shirt-010',
         category: 'shirt',
         name: 'Classic Crisp White Button-Down Shirt',
-        price: 60.00,
+        price: 80000.00,
         description: 'A timeless staple for every wardrobe, our Classic Crisp White Button-Down Shirt offers unmatched versatility and sophistication. Crafted from a comfortable and breathable fabric, this shirt features a clean, sharp silhouette that can be dressed up or down. The classic button-down collar and full-button front provide a refined look, while the long sleeves with buttoned cuffs ensure a polished finish. Perfect for formal occasions, business casual settings, or elevating your everyday style with a touch of understated elegance. A subtle flag logo on the chest adds a discreet hint of heritage.',
         fabric: 'cotton blend, offering breathability and a crisp feel.',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (10).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (7).png'
         ],
         similarProducts: ['shirt-005', 'trousers-003']
     },
@@ -155,14 +155,14 @@ const allProducts = [
         id: 'shirt-011',
         category: 'shirt',
         name: 'Classic Crisp White Button-Down Shirt',
-        price: 60.00,
+        price: 70000.00,
         description: 'Upgrade your casual and active wear with our Sporty Stripe Polo Shirt collection. These comfortable and stylish polos feature a distinctive horizontal stripe design across the chest and sleeves, set against a classic solid body. Available in a versatile pack of three essential colors – a crisp white, a bold red, and a deep navy blue – each shirt is crafted from a breathable, textured fabric, ensuring comfort and easy movement. Perfect for everyday wear, weekend sports, or a smart-casual outing, these polos blend athletic appeal with timeless style.',
         fabric: 'a similar textured, breathable cotton or poly-cotton blend, ideal for comfort and durability.',
         care: 'Wash inside out with similar colors. Line dry recommended.',
         sizes: ['S', 'M', 'L', 'XL'],
         images: [
             'images/shirt (11).png',
-            'https://via.placeholder.com/600x400?text=Denim+Shirt+Detail'
+            'images/sub (9).png'
         ],
         similarProducts: ['shirt-003', 'trousers-004']
     },
