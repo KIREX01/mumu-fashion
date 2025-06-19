@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemDiv.innerHTML = `
                     <div class="booking-item-details">
                         <h4>${item.name} (Size: ${item.size})</h4>
-                        <p>Quantity: ${item.quantity} | Price: $${item.price}</p>
+                        <p>Quantity: ${item.quantity} | Price: ${item.price} BIF</p>
                     </div>
                     <button class="remove-btn" data-identifier="${item.identifier}">Remove</button>
                 `;
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         totalItemsSpan.textContent = totalItems;
-        overallTotalSpan.textContent = `$${overallTotalPrice.toFixed(2)}`;
+        overallTotalSpan.textContent = `${overallTotalPrice.toFixed(2)} BIF`;
 
         if (bookedItemsDataInput) {
             bookedItemsDataInput.value = JSON.stringify(bookings.map(item => ({
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="product-info">
                     <h1>${product.name}</h1>
-                    <p class="price">$${product.price.toFixed(2)}</p>
+                    <p class="price">${product.price.toFixed(2)} BIF</p>
 
                     <h4>Description</h4>
                     <p>${product.description}</p>
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productItem.innerHTML = `
                 <img src="${product.images[0]}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p class="price">$${product.price.toFixed(2)}</p>
+                <p class="price">${product.price.toFixed(2)} BIF</p>
                 <a href="product-details.html?id=${product.id}" class="btn view-details-btn">View Details</a>
             `;
             similarProductsGrid.appendChild(productItem);

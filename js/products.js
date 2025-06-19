@@ -170,7 +170,7 @@ const allProducts = [
         id: 'trousers-001',
         category: 'trousers',
         name: 'Classic Blue Slim-Fit Jeans',
-        price: 85.00,
+        price: 150000.00,
         description: 'Discover your new go-to denim with our Classic Blue Slim-Fit Jeans. These versatile jeans feature a timeless medium-blue wash with subtle fading, offering a lived-in look that is perfect for everyday wear. Designed with a contemporary slim fit, they provide a sleek silhouette without compromising on comfort. The classic five-pocket styling, sturdy construction, and a distinctive stitch detail on the back pocket ensure both functionality and a touch of unique style. Ideal for pairing with anything from a casual tee to a button-down shirt, these jeans are a wardrobe essential for effortless style.',
         fabric: 'Durable denim (likely 100% cotton)',
         care: 'Dry clean only.',
@@ -185,7 +185,7 @@ const allProducts = [
         id: 'trousers-002',
         category: 'trousers',
         name: 'Deep Indigo Slim-Fit Jeans',
-        price: 70.00,
+        price: 90000.00,
         description: 'Elevate your denim collection with our Deep Indigo Slim-Fit Jeans. These stylish jeans feature a rich, dark indigo blue wash, offering a versatile and modern aesthetic that can effortlessly transition from day to night. Designed with a contemporary slim fit, they provide a sleek and flattering silhouette while ensuring comfortable wear. Classic five-pocket styling and subtle, yet distinctive, stitching details on the back pockets add a touch of refined character. Perfect for pairing with anything from a casual t-shirt to a smart button-down, these jeans are a timeless addition to any wardrobe.',
         fabric: 'Durable denim (a cotton blend, potentially with stretch for comfort).',
         care: 'Machine wash cold. Tumble dry low.',
@@ -200,7 +200,7 @@ const allProducts = [
         id: 'trousers-003',
         category: 'trousers',
         name: 'Vintage Wash Slim-Fit Jeans',
-        price: 70.00,
+        price: 150000.00,
         description: 'Achieve a cool, lived-in look with our Vintage Wash Slim-Fit Jeans. These stylish jeans feature a medium-to-dark blue wash with intentional fading and whiskering on the thighs and knees, giving them a perfectly worn aesthetic from day one. Designed with a modern slim fit, they offer a sleek silhouette that flatters without being overly restrictive. The classic five-pocket construction provides timeless utility, while the aged finish adds character. Perfect for elevating your casual wardrobe, these jeans pair effortlessly with graphic tees, hoodies, or a relaxed button-down.',
         fabric: 'Durable denim (a cotton blend, potentially with stretch for comfort).',
         care: 'Machine wash cold. Tumble dry low.',
@@ -215,7 +215,7 @@ const allProducts = [
         id: 'trousers-004',
         category: 'trousers',
         name: 'Vibrant Cobalt Blue Jeans',
-        price: 70.00,
+        price: 90000.00,
         description: 'Add a pop of striking color to your denim collection with our Vibrant Cobalt Blue Jeans. These bold jeans feature a rich, saturated blue wash that stands out from typical denim shades, offering a modern and expressive look. Designed with a comfortable fit, they feature classic five-pocket styling and unique "V" shaped stitching details on the back pockets in contrasting gold thread, adding a distinctive touch. Perfect for making a statement in your casual attire, these jeans pair well with neutral tops or can be styled for an adventurous, color-coordinated ensemble.',
         fabric: 'Durable denim (a cotton blend, potentially with stretch for comfort).',
         care: 'Machine wash cold. Tumble dry low.',
@@ -230,7 +230,7 @@ const allProducts = [
         id: 'trousers-005',
         category: 'trousers',
         name: 'Dark Rinse Classic Stitch Jeans',
-        price: 70.00,
+        price: 90000.00,
         description: 'Step out in timeless style with our Dark Rinse Classic Stitch Jeans. These versatile jeans feature a rich, deep indigo wash with subtle whiskering, offering a sophisticated and clean aesthetic suitable for various occasions. The classic five-pocket design is enhanced by distinctive golden-brown contrast stitching that highlights the seams and pocket details, adding a touch of craftsmanship. Designed for comfort and a flattering fit, these jeans are a wardrobe essential that can be dressed up with a smart shirt or kept casual with a simple tee.',
         fabric: 'Durable denim (a cotton blend, potentially with stretch for comfort).',
         care: 'Machine wash cold. Tumble dry low.',
@@ -245,7 +245,7 @@ const allProducts = [
         id: 'trousers-006',
         category: 'trousers',
         name: 'Mid-Wash Distressed Slim Jeans',
-        price: 70.00,
+        price: 150000.00,
         description: 'Achieve an effortlessly cool and contemporary look with our Mid-Wash Distressed Slim Jeans. These stylish jeans feature a versatile mid-blue wash with subtle fading and whiskering on the thighs and knees, giving them a perfectly worn-in feel. Designed with a modern slim fit, they offer a streamlined silhouette while ensuring comfort for all-day wear. The classic five-pocket styling and rugged aesthetic make them an ideal choice for casual outings, weekend adventures, or pairing with your favorite sneakers and a relaxed top.',
         fabric: 'Durable denim (a cotton blend, potentially with stretch for comfort).',
         care: 'Machine wash cold. Tumble dry low.',
@@ -256,11 +256,11 @@ const allProducts = [
         ],
         similarProducts: ['trousers-005', 'shirt-002']
     },
-        {
+    {
         id: 'trousers-007',
         category: 'trousers',
         name: 'Bright Blue Essential Slim Jeans',
-        price: 70.00,
+        price: 150000.00,
         description: 'Brighten up your denim collection with our Bright Blue Essential Slim Jeans. These vibrant jeans feature a striking, clear blue wash that offers a fresh and modern alternative to traditional denim. Designed with a comfortable slim fit, they provide a sleek silhouette that flatters while allowing for easy movement. The classic five-pocket styling is enhanced by subtle "V" shaped stitching on the back pockets and a distinct branded patch, adding a touch of contemporary detail. Perfect for adding a pop of color to your casual ensembles, these jeans are versatile for everyday wear or a relaxed weekend look.',
         fabric: 'Durable denim (a cotton blend, potentially with stretch for comfort).',
         care: 'Machine wash cold. Tumble dry low.',
@@ -270,5 +270,65 @@ const allProducts = [
             'https://via.placeholder.com/600x400?text=Chino+Trousers+Back'
         ],
         similarProducts: ['trousers-006', 'shirt-001']
+    },
+    {
+        id: 'shoe-001',
+        category: 'shoes',
+        name: 'Air Force 1 Classic White',
+        price: 110000.00,
+        description: 'Elevate your everyday style with the iconic Air Force 1 Classic White. This timeless low-top sneaker features a pristine all-white design, offering unmatched versatility and a clean, fresh look that complements any outfit. Its durable construction ensures lasting wear, making it a staple for your wardrobe.',
+        fabric: 'Upper: Premium Synthetic Leather Lining: Breathable Textile Sole: Durable Rubber Outsole with Encapsulated Air Unit',
+        care: 'Wipe clean with a damp cloth and mild soap. Air dry away from direct sunlight. Do not machine wash.',
+        sizes: ['28', '30', '32', '34', '36'],
+        images: [
+            'images/shoe (1).png',
+            'images/shoe (3).png'
+        ],
+        similarProducts: [ 'shirt-010', 'shoe-004']
+    },
+        {
+        id: 'shoe-002',
+        category: 'shoes',
+        name: 'Air Force 1 Ocean Blues',
+        price: 110000.00,
+        description: 'Dive into classic comfort with the Air Force 1 Ocean Blues. This striking two-tone design blends deep navy and crisp white, creating a versatile sneaker that’s both stylish and easy to wear. The textured upper adds depth, making it a unique addition to your sneaker rotation.',
+        fabric: 'Upper: Durable Synthetic Leather & Textured Suede-like material (blue) Lining: Breathable Textile Sole: Durable Rubber Outsole with Encapsulated Air Unit',
+        care: 'Wipe leather sections with a damp cloth. For textured/suede-like areas, use a soft brush. Air dry. Do not machine wash.',
+        sizes: ['28', '30', '32', '34', '36'],
+        images: [
+            'images/shoe (2).png',
+            'images/shoe (6).png'
+        ],
+        similarProducts: [ 'shirt-008', 'shoe-003']
+    },
+        {
+        id: 'shoe-003',
+        category: 'shoes',
+        name: 'Air Force 1 Desert Camo Lows',
+        price: 110000.00,
+        description: 'Embrace urban sophistication with the Air Force 1 Desert Camo Lows. This distinctive colorway combines rich tan and deep black panels, accented by a crisp white sole, offering a rugged yet refined aesthetic. Perfect for adding a bold statement to your casual or street-style ensemble.',
+        fabric: 'Upper: High-Quality Synthetic Leather & Suede accents (black toe) Lining: Breathable Textile Sole: Durable Rubber Outsole with Encapsulated Air Unit',
+        care: 'Wipe leather sections with a damp cloth. For suede areas, use a suede brush to remove dirt. Air dry. Do not machine wash.',
+        sizes: ['28', '30', '32', '34', '36'],
+        images: [
+            'images/shoe (4).png',
+            'images/shoe (7).png'
+        ],
+        similarProducts: [ 'shirt-005', 'shoe-002']
+    },
+        {
+        id: 'shoe-004',
+        category: 'shoes',
+        name: 'Air Force 1 Tropical Breeze',
+        price: 110000.00,
+        description: 'Make a vibrant splash with the Air Force 1 Tropical Breeze. Featuring an eye-catching combination of energetic orange suede and cool teal accents, these sneakers bring a playful, resort-inspired vibe to your look. Designed for those who dare to stand out and embrace bold color.',
+        fabric: 'Upper: Premium Suede (Orange, Teal, White) Lining: Breathable Textile Sole: Durable Rubber Outsole with Encapsulated Air Unit',
+        care: 'Use a soft suede brush to clean. For tough spots, use a suede cleaner. Avoid excessive water. Air dry away from direct sunlight. Do not machine wash.',
+        sizes: ['28', '30', '32', '34', '36'],
+        images: [
+            'images/shoe (5).png',
+            'images/shoe (8).png'
+        ],
+        similarProducts: [ 'shirt-001', 'shoe-001']
     },
 ];
