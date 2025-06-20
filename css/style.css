@@ -69,6 +69,11 @@ body.dark-mode .logo {
     border-bottom: 2px solid #e91e63;
 }
 
+.dark-mode .nav-links a.active {
+    color: #e91e63; /* or your highlight color */
+    font-weight: bold;
+    border-bottom: 2px solid #e91e63;
+}
 
 body.dark-mode .nav-links a {
     color: #f4f4f4;
@@ -216,8 +221,7 @@ body.dark-mode footer {
     }
     .nav-links li {
         margin: 0;
-        border-bottom: 1px solid #eee;
-        text-align: right;
+        text-align: center;
         padding: 12px 20px;
     }
     .nav-links.active {
