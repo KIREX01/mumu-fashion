@@ -312,6 +312,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
+            // zoom product images in the product details pages
+            mainProductImage.onclick = function() {
+                if (mainProductImage.style.transform === "scale(2)") {
+                    mainProductImage.style.transform = "scale(1)";
+                    mainProductImage.style.cursor = "zoom-in";
+                } else {
+                    mainProductImage.style.transform = "scale(2)";
+                    mainProductImage.style.cursor = "zoom-out";
+                }
+            };
+            mainProductImage.style.transition = "transform 0.3s";
+            mainProductImage.style.cursor = "zoom-in";
+
             const addToBookingBtn = document.getElementById('addToBookingBtn');
             if (addToBookingBtn) {
                 addToBookingBtn.addEventListener('click', () => {
@@ -613,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+        // form validation
         if (consolidatedBookingForm) {
         // Get form fields and error spans
         const nameInput = document.getElementById('customerName');
@@ -672,4 +685,77 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+
+        // Quick View Modal Logic
+        const quickViewModal = document.getElementById('quickViewModal');
+        const quickViewContent = document.getElementById('quickViewContent');
+        const closeQuickView = document.getElementById('closeQuickView');
+
+        // Helper: Get product data (you may need to adjust this to use your products.js)
+        function getProductDataById(productId) {
+            if (typeof allProducts !== "undefined") {
+                return allProducts.find(p => p.id === productId);
+            }
+            // Fallback: Try to get info from DOM (not as rich)
+            const productDiv = document.querySelector(`.product-item[data-product-id="${productId}"]`);
+            if (!productDiv) return null;
+            return {
+                id: productId,
+                name: productDiv.querySelector('h3').textContent,
+                price: productDiv.querySelector('.price').textContent,
+                images: [productDiv.querySelector('img').src],
+                description: "No description available."
+            };
+        }
+
+        // Open Quick View
+        document.querySelectorAll('.quick-view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productDiv = btn.closest('.product-item');
+                const productId = productDiv.getAttribute('data-product-id');
+                const product = getProductDataById(productId);
+                if (!product) return;
+
+                // Build modal content
+                quickViewContent.innerHTML = `
+                    <span class="close-button" id="closeQuickView">&times;</span>
+                    <div class="quick-view-gallery">
+                        <img src="${product.images[0]}" alt="${product.name}" class="quick-view-main-img" id="quickViewMainImg">
+                    </div>
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price} BIF</p>
+                    <p>${product.description || ''}</p>
+                `;
+                quickViewModal.style.display = 'flex';
+
+                // Add close event
+                document.getElementById('closeQuickView').onclick = function() {
+                    quickViewModal.style.display = 'none';
+                };
+
+                // Image zoom on click
+                const mainImg = document.getElementById('quickViewMainImg');
+                mainImg.onclick = function() {
+                    if (mainImg.style.transform === "scale(2)") {
+                        mainImg.style.transform = "scale(1)";
+                        mainImg.style.cursor = "zoom-in";
+                    } else {
+                        mainImg.style.transform = "scale(2)";
+                        mainImg.style.cursor = "zoom-out";
+                    }
+                };
+                mainImg.style.transition = "transform 0.3s";
+                mainImg.style.cursor = "zoom-in";
+            });
+        });
+
+        // Close modal when clicking outside content
+        if (quickViewModal) {
+            quickViewModal.onclick = function(e) {
+                if (e.target === quickViewModal) {
+                    quickViewModal.style.display = 'none';
+                }
+            };
+        }
 });
