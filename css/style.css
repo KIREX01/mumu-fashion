@@ -64,11 +64,6 @@ body.dark-mode .logo {
     transition: color 0.3s ease;
 }
 
-.nav-links a.active {
-    color: #e91e63; /* or your highlight color */
-    font-weight: bold;
-    border-bottom: 2px solid #e91e63;
-}
 
 body.dark-mode .nav-links a {
     color: #f4f4f4;
