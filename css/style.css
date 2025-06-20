@@ -762,6 +762,13 @@ body.dark-mode .consolidated-form textarea:focus {
     background-color: #218838;
 }
 
+.error-message {
+    color: #dc3545;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    display: block;
+}
+
 .clear-btn {
     background-color: #ffc107; /* Orange for clear */
     color: #333;

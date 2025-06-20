@@ -48,14 +48,18 @@
             <form id="consolidatedBookingForm" class="consolidated-form" action="https://formspree.io/f/mzzgazoz" method="POST">
                 <h3>Your Details</h3>
 
+                <!-- Example for Name field -->
                 <label for="customerName">Your Name:</label>
                 <input type="text" id="customerName" name="Name" required>
+                <span class="error-message" id="nameError"></span>
 
                 <label for="customerEmail">Your Email:</label>
                 <input type="email" id="customerEmail" name="Email" required>
+                <span class="error-message" id="emailError"></span>
 
                 <label for="customerPhone">Phone Number:</label>
                 <input type="tel" id="customerPhone" name="Phone">
+                <span class="error-message" id="phoneError"></span>
 
                 <label for="customerMessage">Additional Message:</label>
                 <textarea id="customerMessage" name="Message" rows="4"></textarea>

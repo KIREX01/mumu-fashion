@@ -612,4 +612,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+
+        if (consolidatedBookingForm) {
+        // Get form fields and error spans
+        const nameInput = document.getElementById('customerName');
+        const emailInput = document.getElementById('customerEmail');
+        const phoneInput = document.getElementById('customerPhone');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+
+        // Real-time validation functions
+        function validateName() {
+            if (!nameInput.value.trim()) {
+                nameError.textContent = "Name is required.";
+                return false;
+            }
+            nameError.textContent = "";
+            return true;
+        }
+        function validateEmail() {
+            const email = emailInput.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                emailError.textContent = "Email is required.";
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Please enter a valid email address.";
+                return false;
+            }
+            emailError.textContent = "";
+            return true;
+        }
+        function validatePhone() {
+            const phone = phoneInput.value.trim();
+            if (phone && !/^\+?\d{7,15}$/.test(phone)) {
+                phoneError.textContent = "Please enter a valid phone number.";
+                return false;
+            }
+            phoneError.textContent = "";
+            return true;
+        }
+
+        // Attach real-time validation
+        nameInput.addEventListener('input', validateName);
+        emailInput.addEventListener('input', validateEmail);
+        phoneInput.addEventListener('input', validatePhone);
+
+        // On form submit, check all
+        consolidatedBookingForm.addEventListener('submit', function(event) {
+            let valid = true;
+            if (!validateName()) valid = false;
+            if (!validateEmail()) valid = false;
+            if (!validatePhone()) valid = false;
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    }
 });
