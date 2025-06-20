@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.toggle('dark-mode');
             let theme = 'light-mode';
             const icon = darkModeToggle.querySelector('i');
-
+    
             if (document.body.classList.contains('dark-mode')) {
                 theme = 'dark-mode';
                 icon.classList.replace('fa-moon', 'fa-sun');
@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', theme);
         });
     }
-
 
     // --- Hamburger Menu Functionality ---
     if (hamburger && navLinks) {
@@ -107,7 +106,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
+        hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        });
     }
+
+     // Highlight active nav link
+        const navLink = document.querySelectorAll('.nav-links a');
+        const currentPage = window.location.pathname.split('/').pop();
+        navLink.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
 
 
     // --- Booking List Management Functions ---
@@ -515,32 +527,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (consolidatedBookingForm) {
             consolidatedBookingForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
+            event.preventDefault();
 
-                if (getBookings().length === 0) {
-                    alert('Your booking list is empty. Please add items before confirming.');
-                    return;
-                }
+            const bookings = getBookings();
+            if (bookings.length === 0) {
+                alert('Your booking list is empty. Please add items before confirming.');
+                return;
+            }
 
-                const form = event.target;
-                const formData = new FormData(form);
+            // Format booked items as a readable list
+            if (bookedItemsDataInput) {
+                bookedItemsDataInput.value = bookings.map(item =>
+                    `${item.name} (Size: ${item.size}) - Qty: ${item.quantity}, Price per unit: ${item.originalPrice} BIF, Total: ${item.price} BIF`
+                ).join('\n');
+            }
+            if (overallTotalDataInput) {
+                const overallTotal = bookings.reduce((sum, item) => sum + parseFloat(item.price), 0);
+                overallTotalDataInput.value = `${overallTotal.toFixed(2)} BIF`;
+            }
 
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
+            const form = event.target;
+            const formData = new FormData(form);
 
-                    if (response.ok) {
-                        if (consolidatedBookingForm) consolidatedBookingForm.style.display = 'none';
-                        if (thankYouMessage) {
-                            thankYouMessage.textContent = 'Your consolidated booking has been sent! We will confirm availability and payment details shortly.';
-                            thankYouMessage.style.color = '#28a745';
-                            thankYouMessage.style.display = 'block';
-                        }
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    if (consolidatedBookingForm) consolidatedBookingForm.style.display = 'none';
+                    if (thankYouMessage) {
+                        thankYouMessage.textContent = 'Your consolidated booking has been sent! We will confirm availability and payment details shortly.';
+                        thankYouMessage.style.color = '#28a745';
+                        thankYouMessage.style.display = 'block';
+                    }
 
                         localStorage.removeItem('mumuFashionsBookings');
                         updateBookingCount();
