@@ -48,6 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchResultsDiv = document.getElementById('searchResults');
     const noSearchResultsMessage = searchResultsDiv ? searchResultsDiv.querySelector('.empty-message') : null;
 
+    // loader hide function 
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('siteLoader');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 400);
+        }
+    });
 
     // --- Dark Mode Toggle Functionality ---
     const currentTheme = localStorage.getItem('theme');
