@@ -63,6 +63,11 @@ body.dark-mode .logo {
     padding: 5px 0;
     transition: color 0.3s ease;
 }
+.nav-links a.active {
+    color: #e91e63; /* or your highlight color */
+    font-weight: bold;
+    border-bottom: 2px solid #e91e63;
+}
 
 
 body.dark-mode .nav-links a {
@@ -186,10 +191,14 @@ body.dark-mode footer {
 
 /* --- Responsive Design (Media Queries) --- */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        position: relative;
+    }
     .nav-links {
         flex-direction: column;
         position: absolute;
-        top: 60px; /* adjust based on navbar height */
+        top: 60px; /* Adjust if your navbar is taller/shorter */
         right: 0;
         background: #fff;
         width: 200px;
@@ -197,42 +206,30 @@ body.dark-mode footer {
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         transition: max-height 0.3s;
+        z-index: 1000;
+        gap: 0;
+        padding: 0;
     }
-
-    body.dark-mode .nav-links {
-        background-color: #222;
+    .dark-mode .nav-links {
+    background-color: #222;
+    color: #f4f4f4;
     }
-
-    .nav-links.active {
-         max-height: 500px; /* enough to show all links */
-         color: #6b5add; /* or your highlight color */
-        font-weight: bold;
-        border-bottom: 2px solid #6b5add;
-    }
-
     .nav-links li {
-        margin: 10px 0;
-        text-align: center;
+        margin: 0;
+        border-bottom: 1px solid #eee;
+        text-align: right;
+        padding: 12px 20px;
+    }
+    .nav-links.active {
+        max-height: 500px; /* Enough to show all links */
+        padding-bottom: 10px;
     }
 
     .hamburger {
-        display: block; /* Show hamburger icon on small screens */
-    }
-
-    .navbar {
-        padding: 10px 15px;
-    }
-
-    .hero h1 {
-        font-size: 2.2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .btn {
-        padding: 10px 20px;
+        display: block;
+        font-size: 2em;
+        margin-left: 20px;
+        z-index: 1100;
     }
 }
 
