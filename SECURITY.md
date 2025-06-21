@@ -14,8 +14,6 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+To report a security vulnerability, please email us at [kiregeyafrancis@gmail.com](mailto:kiregeyafrancis@gmail.com) or contact us via WhatsApp at +256750783846.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+We aim to acknowledge all vulnerability reports within 2 business days. After triage, we will keep you informed about the progress and expected timelines. If the vulnerability is accepted, we will work on a fix and notify you when it is released. If the report is declined, we will provide a clear explanation.
