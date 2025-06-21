@@ -1889,8 +1889,8 @@ body.dark-mode .error-container h1 {
     cursor: pointer;
 }
 .quick-view-main-img {
-    width: 100%;
-    max-width: 300px;
+    width: 50%;
+    max-width: 250px;
     border-radius: 8px;
     margin-bottom: 15px;
     transition: transform 0.3s;
