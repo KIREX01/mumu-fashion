@@ -131,7 +131,7 @@ body.dark-mode .hamburger {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
-    background: #fff;
+    background: #555;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -140,7 +140,7 @@ body.dark-mode .hamburger {
 }
 
 .dark-mode #siteLoader {
-    background: #555;
+    background: #000000;
 }
 
 .loader-content {
