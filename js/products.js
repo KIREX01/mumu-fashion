@@ -170,7 +170,7 @@ const allProducts = [
         id: 'trousers-001',
         category: 'trousers',
         name: 'Classic Blue Slim-Fit Jeans',
-        price: 150000.00,
+        price: 80000.00,
         description: 'Discover your new go-to denim with our Classic Blue Slim-Fit Jeans. These versatile jeans feature a timeless medium-blue wash with subtle fading, offering a lived-in look that is perfect for everyday wear. Designed with a contemporary slim fit, they provide a sleek silhouette without compromising on comfort. The classic five-pocket styling, sturdy construction, and a distinctive stitch detail on the back pocket ensure both functionality and a touch of unique style.',
         fabric: 'Durable denim (likely 100% cotton)',
         care: 'Dry clean only.',
