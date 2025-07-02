@@ -10,6 +10,7 @@
 // 9. promotional carousel
 // 10. 404 page search trigger
 // 11. form validation
+// 12. Sticky booking confirmation panel
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('navLinks');
     const hamburger = document.getElementById('hamburger');
     const bookingCountSpan = document.getElementById('bookingCount');
+    const bookingCountHeaderSpan = document.getElementById('bookingCountHeader');
+    const bookingConfirmationPanel = document.getElementById('bookingConfirmationPanel');
 
     // --- Search Functionality References ---
     const searchToggle = document.getElementById('searchToggleFloat');
@@ -136,6 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     updateBookingCount();
+
+    function updateBookingCountHeader() {
+        const bookings = getBookings();
+        if (bookingCountHeaderSpan) {
+            bookingCountHeaderSpan.textContent = bookings.length;
+        }
+    }
+    updateBookingCountHeader();
 
     // --- 4. Search Overlay (site-wide) ---
     function initializeSearch() {
@@ -258,6 +269,18 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('mumuFashionsBookings', JSON.stringify(bookings));
         updateBookingCount();
     }
+    
+    // --- NEW: Function to show the sticky confirmation panel ---
+    function showBookingConfirmationPanel() {
+        if (!bookingConfirmationPanel) return;
+        // Show the panel
+        bookingConfirmationPanel.classList.add('show');
+        // Hide it after 3 seconds
+        setTimeout(() => {
+            bookingConfirmationPanel.classList.remove('show');
+        }, 3000);
+    }
+    
     function addToBooking(productName, productPrice, productId, selectedSize, quantity) {
         const bookings = getBookings();
         const itemIdentifier = `${productId}-${selectedSize}`;
@@ -278,7 +301,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         saveBookings(bookings);
-        alert(`${quantity} x ${productName} (Size: ${selectedSize}) added to your booking list!`);
+        // --- MODIFIED: Replaced alert with the new panel ---
+        showBookingConfirmationPanel();
     }
     function removeBookingItem(itemIdentifier) {
         let bookings = getBookings();

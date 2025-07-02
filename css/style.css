@@ -58,6 +58,37 @@ body.dark-mode .nav-links a:hover { color: #90caf9; }
 .nav-icons {
     display: flex; align-items: center; gap: 10px; position: relative; z-index: 1001;
 }
+.cart-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 18px;
+    font-size: 1.5em;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.cart-header a{
+    text-decoration: none;
+    color: #262627;
+}
+body.dark-mode .cart-header a{ color: #90caf9; }
+.cart-header:hover { color: #0056b3; }
+.cart-count {
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    background: #e91e63;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 7px;
+    min-width: 22px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    pointer-events: none;
+}
 .mode-toggle {
     background: none; border: none; font-size: 1.5em; cursor: pointer;
     color: #555; margin-right: 15px; transition: color 0.3s;
@@ -167,15 +198,15 @@ body.dark-mode .dot.active, body.dark-mode .dot:hover { background: #90caf9; bor
 /* =========================
    4. Product Grid/List (Home/Shop)
    ========================= */
-.products {
+.products, .featured-products {
     padding: 40px 20px; max-width: 1200px; margin: 20px auto; background: #fff;
     border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: background-color 0.3s;
 }
-body.dark-mode .products { background: #2c2c2c; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-.products h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #333; }
-body.dark-mode .products h2 { color: #f4f4f4; }
+body.dark-mode .products, body.dark-mode .featured-products { background: #2c2c2c; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.products h2, .featured-products h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #333; }
+body.dark-mode .products h2, body.dark-mode .featured-products h2 { color: #f4f4f4; }
 .product-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; justify-content: center;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; justify-content: center;
 }
 .product-item {
     background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 20px; text-align: center;
@@ -190,11 +221,14 @@ body.dark-mode .product-item { background: #3a3a3a; border-color: #555; box-shad
 body.dark-mode .product-item h3 { color: #f4f4f4; }
 .product-item .price { font-size: 1.3em; color: #007bff; font-weight: bold; margin-bottom: 20px; }
 body.dark-mode .product-item .price { color: #90caf9; }
-.product-item .book-btn {
+.product-item .book-btn, .product-item .quick-view-btn {
     background: #28a745; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1em;
     transition: background 0.3s;
 }
+.product-item .quick-view-btn { background-color: #6c757d; }
 .product-item .book-btn:hover { background: #218838; }
+.product-item .quick-view-btn:hover { background: #5a6268; }
+
 
 /* =========================
    5. Product Details Page
@@ -359,6 +393,64 @@ body.dark-mode .contact-us p { color: #ccc; }
 body.dark-mode .contact-info strong { color: #90caf9; }
 
 /* =========================
+   NEW: Delivery & Payment Section
+   ========================= */
+.delivery-payment-info {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: background-color 0.3s;
+}
+body.dark-mode .delivery-payment-info {
+    background: #2c2c2c;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.delivery-payment-info h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+body.dark-mode .delivery-payment-info h2 {
+    color: #f4f4f4;
+}
+.delivery-payment-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+body.dark-mode .delivery-payment-info p {
+    color: #ccc;
+}
+.payment-details {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px auto;
+    display: inline-block;
+}
+body.dark-mode .payment-details {
+    background: #3a3a3a;
+    border-color: #555;
+}
+.payment-details p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+.payment-details strong {
+    color: #007bff;
+}
+body.dark-mode .payment-details strong {
+    color: #90caf9;
+}
+
+
+/* =========================
    9. About Page
    ========================= */
 .about-us-content {
@@ -442,6 +534,35 @@ body.dark-mode .search-overlay #closeSearch { color: #ccc; }
 }
 
 /* =========================
+   NEW: Sticky Booking Panel
+   ========================= */
+.sticky-booking-panel {
+    position: fixed;
+    top: 90px;
+    right: -300px; /* Initially hidden */
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -2px 3px 8px rgba(0,0,0,0.2);
+    z-index: 2000;
+    transition: right 0.5s ease-in-out;
+    font-size: 1.1em;
+}
+.sticky-booking-panel.show {
+    right: 0; /* Slide in */
+}
+.sticky-booking-panel p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+body.dark-mode .sticky-booking-panel {
+    background-color: #388e3c;
+}
+
+/* =========================
    12. Media Queries (Responsive)
    ========================= */
 @media (max-width: 850px) {
@@ -492,6 +613,19 @@ body.dark-mode .search-overlay #closeSearch { color: #ccc; }
     .carousel-caption h3 { font-size: 1.5em; }
     .carousel-caption p { font-size: 0.9em; margin-bottom: 15px; }
     .carousel-caption .carousel-btn { padding: 8px 15px; font-size: 0.9em; }
+}
+@media (max-width: 600px){
+        .cart-header {
+        font-size: 1.2em;
+        margin-right: 10px;
+    }
+    .cart-count {
+        font-size: 0.8em;
+        min-width: 18px;
+        top: -6px;
+        right: -8px;
+        padding: 1px 5px;
+    }
 }
 @media (max-width: 500px) {
     .main-product-image { height: 300px; }
