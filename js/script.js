@@ -137,16 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bookingCountSpan) {
             bookingCountSpan.textContent = bookings.length;
         }
-    }
-    updateBookingCount();
-
-    function updateBookingCountHeader() {
-        const bookings = getBookings();
         if (bookingCountHeaderSpan) {
             bookingCountHeaderSpan.textContent = bookings.length;
         }
     }
-    updateBookingCountHeader();
+    updateBookingCount();
+
+    
 
     // --- 4. Search Overlay (site-wide) ---
     function initializeSearch() {
