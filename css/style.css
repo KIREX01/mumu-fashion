@@ -622,8 +622,8 @@ body.dark-mode .sticky-booking-panel {
     .cart-count {
         font-size: 0.8em;
         min-width: 18px;
-        top: -6px;
-        right: -8px;
+        top: -12px;
+        right: -20px;
         padding: 1px 5px;
     }
 }
