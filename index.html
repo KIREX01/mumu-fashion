@@ -1,222 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MUMU Fashions - Your destination for premium men's shirts and trousers in Burundi. Shop the latest styles in formal, casual, and denim wear.">
-    <meta name="keywords" content="mumu, fashion, shirts, trousers, shopping, booking, mumu-fashion, MUMU-Fashion, Burundi, mumu-fashion-burundi, MFB, mfb.">
-    <meta name="author" content="MUMU Fashion">
-    <meta name="theme-color" content="#ffffff">
-    
-    <meta name="geo.region" content="Burundi" />
-    <meta name="geo.placename" content="Burundi" />
-    <link href="images/logo/logo.png" rel="icon" />
-    <title>MUMU Fashions - Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mumu Fashion | Elegance Redefined for the Modern Gentleman</title>
+  <meta name="description"
+    content="Shop sophisticated shirts, tailored trousers, and premium footwear at Mumu Fashion. Bujumbura's premier men's fashion destination with home delivery and Lumicash payments." />
+  <meta name="author" content="Mumu Fashion" />
+  <link rel="icon" type="image/x-icon" href="/logos/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/logos/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/logos/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/logos/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1a1f2c" />
 
-    <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Mumu Fashion | Men's Fashion in Bujumbura" />
+  <meta property="og:description"
+    content="Elegance redefined for the modern gentleman. Shop shirts, trousers, and shoes with home delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kirex01.github.io/mumu-fashion/logos/logo.png" />
 
-    <meta property="og:title" content="MUMU Fashions - Your destination for premium men's shirts and trousers in Burundi. Shop the latest styles in formal, casual, and denim wear.">
-    <meta property="og:description" content="Shopping for all gentlemen's shirts and trousers in Burundi">
-    <meta property="og:image" content="https://kirex01.github.io/mumu-fashion/images/logo/logo.png">
-    <meta property="og:url" content="https://kirex01.github.io/mumu-fashion">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MUMU Fashions - Your destination for premium men's shirts and trousers in Burundi. Shop the latest styles in formal, casual, and denim wear.">
-    <meta name="twitter:description" content="Shopping for all gentlemen's shirts and trousers in Burundi">
-    <meta name="twitter:image" content="https://kirex01.github.io/mumu-fashion/images/logo/logo.png">
-
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MumuFashion" />
+  <meta name="twitter:image" content="https://kirex01.github.io/mumu-fashion/logos/logo.png" />
 </head>
+
 <body>
-
-
-    <header>
-        <nav class="navbar">
-            <div class="logo">MF</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shirts.html">Shirts</a></li>
-                <li><a href="trousers.html">Trousers</a></li>
-                <li><a href="shoes.html">Shoes</a></li>
-                <li><a href="bookings.html">My Bookings (<span id="bookingCount">0</span>)</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-icons">
-                <button id="darkModeToggle" class="mode-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <!-- Cart Icon with Booking Count -->
-                <div class="cart-header" id="cartHeader">
-                    <a href="bookings.html">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span id="bookingCountHeader" class="cart-count">0</span>
-                    </a>
-                </div>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <button id="searchToggleFloat" class="search-float" aria-label="Toggle Search">
-        <i class="fas fa-search"></i>
-    </button>
-
-    <div class="search-overlay" id="searchOverlay">
-        <input type="text" id="searchInput" placeholder="Search for shirts, trousers..." aria-label="Search products">
-        <button id="closeSearch" aria-label="Close search">
-            <i class="fas fa-times"></i>
-        </button>
-        <div id="searchResults" class="search-results-dropdown">
-            <p class="empty-message" style="display:none;">No results found.</p>
-        </div>
-    </div>
-
-    <main>
-        <section class="promo-carousel-section">
-            <div class="carousel-container" id="promoCarousel">
-                <div class="carousel-slide">
-                    <img src="images/logo/bg (1).jpg" alt="New Collection">
-                    <div class="carousel-caption">
-                        <h3>Discover Our Latest Styles!</h3>
-                        <p>Explore the freshest designs in shirts and trousers.</p>
-                        <a href="shirts.html" class="btn carousel-btn">Shop Now</a>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/logo/bg (2).jpg" alt="Summer Sale">
-                    <div class="carousel-caption">
-                        <h3>Summer Sale - Up to 30% Off!</h3>
-                        <p>Limited time offers on selected items.</p>
-                        <a href="trousers.html" class="btn carousel-btn">View Sale</a>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/logo/bg (3).jpg" alt="Custom Tailoring">
-                    <div class="carousel-caption">
-                        <h3>Custom Tailoring Services</h3>
-                        <p>Get the perfect fit with our bespoke tailoring.</p>
-                        <a href="contact.html" class="btn carousel-btn">Inquire Now</a>
-                    </div>
-                </div>
-                </div>
-
-            <button class="carousel-control prev" aria-label="Previous slide">&#10094;</button>
-            <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
-
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </section>
-
-        <section class="hero">
-            <h1>Elegance Redefined for the Modern Gentleman</h1>
-            <p>Discover sophisticated shirts and impeccably tailored trousers designed for distinction.</p>
-            <div class="hero-buttons">
-                <a href="shirts.html" class="btn primary-btn">Explore Shirts</a>
-                <a href="trousers.html" class="btn secondary-btn">Discover Trousers</a>
-                <a href="shoes.html" class="btn secondary-btn">Explore shoes</a>
-            </div>
-        </section>
-
-        <section class="delivery-payment-info">
-            <h2>Delivery and Payment</h2>
-            <p>We are pleased to offer delivery services for your convenience. Your order can be delivered right to your doorstep.</p>
-            <p>We accept mobile money payments via Lumicash. Please send the total amount to:</p>
-            <div class="payment-details">
-                <p><strong>Account Name:</strong> Muganga Patience</p>
-                <p><strong>Lumicash Number:</strong> 64057443</p>
-            </div>
-            <p>Once your payment is confirmed, we will process your delivery.</p>
-        </section>
-
-        <div id="quickViewModal" class="modal">
-            <div class="modal-content" id="quickViewContent">
-                <span class="close-button" id="closeQuickView">&times;</span>
-                </div>
-        </div>
-
-        <section class="featured-products">
-            <h2 style="text-align: center;">Featured Products</h2>
-            <div class="product-grid">
-
-                <div class="product-item" data-product-id="shirt-005">
-                    <img src="images/shirt (5).png" alt="Featured Shirt">
-                    <h3>Multi-Tone Textured Polo Shirt</h3>
-                    <p class="price">70,000 BIF</p>
-                    <a href="product-details.html?id=shirt-005" class="btn view-details-btn">Book Now</a>
-                    <button class="btn quick-view-btn">Quick View</button>
-                </div>
-
-                <div class="product-item" data-product-id="trousers-002">
-                    <img src="images/trouser (2).png" alt="Featured Trousers">
-                    <h3>Deep Indigo Slim-Fit Jeans</h3>
-                    <p class="price">90,000 BIF</p>
-                    <a href="product-details.html?id=trousers-002" class="btn view-details-btn">Book Now</a>
-                    <button class="btn quick-view-btn">Quick View</button>
-                </div>
-                <div class="product-item" data-product-id="shirt-004">
-                    <img src="images/shirt (4).png" alt="Featured Trousers">
-                    <h3>Midnight Bloom Aloha Shirt</h3>
-                    <p class="price">65,000 BIF</p>
-                    <a href="product-details.html?id=shirt-004" class="btn view-details-btn">Book Now</a>
-                    <button class="btn quick-view-btn">Quick View</button>
-                </div>
-
-                <div class="product-item" data-product-id="trousers-006">
-                    <img src="images/trouser (6).png" alt="Featured Trousers">
-                    <h3>Mid-Wash Distressed Slim Jeans</h3>
-                    <p class="price">150,000 BIF</p>
-                    <a href="product-details.html?id=trousers-006" class="btn view-details-btn">Book Now</a>
-                    <button class="btn quick-view-btn">Quick View</button>
-                </div>
-
-                <div class="product-item" data-product-id="shoe-001">
-                    <img src="images/shoe (1).png" alt="Featured Shoe">
-                    <h3>Air Force 1 Classic White</h3>
-                    <p class="price">110,000 BIF</p>
-                    <a href="product-details.html?id=shoe-001" class="btn view-details-btn">Book Now</a>
-                    <button class="btn quick-view-btn">Quick View</button>
-                </div>
-              
-                <div class="product-item" data-product-id="shoe-003">
-                    <img src="images/shoe (4).png" alt="Featured Shoe">
-                    <h3>Air Force 1 Desert Camo Lows</h3>
-                    <p class="price">110,000 BIF</p>
-                    <a href="product-details.html?id=shoe-003" class="btn view-details-btn">Book Now</a>
-                    <button class="btn quick-view-btn">Quick View</button>
-                </div>
-        </section>
-    </main>
-
-    <a href="https://wa.me/25769966695" class="whatsapp-float" target="_self" aria-label="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <footer>
-            <p>&copy; 2025 MUMU Fashions. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/your_facebook_page" target="_blank" aria-label="Visit us on Facebook" class="facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/your_instagram_page" target="_blank" aria-label="Visit us on Instagram" class="instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://twitter.com/your_twitter_page" target="_blank" aria-label="Visit us on Twitter" class="twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                </div>
-    </footer>
-
-    <script src="js/products.js"></script>
-    <script src="js/script.js"></script>
-
-
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
+
 </html>
