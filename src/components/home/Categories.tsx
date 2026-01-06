@@ -7,20 +7,38 @@ const categories = [
     name: 'Shirts',
     description: 'Sophisticated designs for every occasion',
     href: '/shop/shirts',
-    image: 'https://kirex01.github.io/mumu-fashion/images/shirt%20(5).png',
+    image: 'https://img.freepik.com/free-photo/clothing-rack-with-floral-hawaiian-shirts-hangers-hat_23-2149366019.jpg?t=st=1767726272~exp=1767729872~hmac=6b08cf1a7c27b71302d3dd2337b1ef3230dbbf434cfdaab39040f76de4c828cf&w=1480',
   },
   {
     name: 'Trousers',
     description: 'Impeccably tailored for the perfect fit',
     href: '/shop/trousers',
-    image: 'https://kirex01.github.io/mumu-fashion/images/trouser%20(2).png',
+    image: 'https://img.freepik.com/free-photo/assortment-beige-tone-colored-pants_23-2150773387.jpg?t=st=1767726453~exp=1767730053~hmac=8d82aab8f97494cf3d877262950e6bfb0d2aeee984599d1694c42ef33aabdd66&w=1480',
   },
   {
     name: 'Shoes',
     description: 'Premium footwear for distinction',
     href: '/shop/shoes',
-    image: 'https://kirex01.github.io/mumu-fashion/images/shoe%20(1).png',
+    image: 'https://img.freepik.com/free-photo/close-up-futuristic-sneakers_23-2151005654.jpg?t=st=1767726561~exp=1767730161~hmac=0e43e395329e24e233a4d5ff9daee85e75729a3e15e87448b1fb70fc3b661e9b&w=1480',
   },
+  {
+    name: 'cake',
+    description: 'Elevate your style with our curated selection',
+    href: '/shop/cake',
+    image: 'https://img.freepik.com/free-photo/wonderful-wedding-day_1157-4889.jpg?t=st=1767726760~exp=1767730360~hmac=5c94b9233209940f3481b9c128c31703fe6e12752a98c57f79c7e52b83f49d87&w=1480',
+  },
+  {
+    name: 'Accessories',
+    description: 'Complete your look with stylish accessories',
+    href: '/shop/accessories',
+    image: 'https://img.freepik.com/free-photo/model-career-kit-still-life_23-2150217993.jpg?t=st=1767726923~exp=1767730523~hmac=367465ea697539994f0f97374c23719f45b74c0644c3db047a6953e5fab3b294&w=1480',
+  },
+  {
+    name: 'children ware',
+    description: 'Specialized clothing for children',
+    href: '/shop/children',
+    image: 'https://img.freepik.com/free-photo/photorealistic-portrait-young-people-with-braids_23-2151570188.jpg?t=st=1767727131~exp=1767730731~hmac=cb0fe5db0dea8039a974fb8a6fb2fbbced9007ecddc58a2f6ca5a49d7f442041&w=1480',
+  }
 ];
 
 export const Categories = () => {
