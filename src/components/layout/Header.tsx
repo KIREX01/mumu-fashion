@@ -41,7 +41,7 @@ export const Header = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
               <img
-                src="./logos/android-chrome-192x192.png"
+                src={`${import.meta.env.BASE_URL}logos/android-chrome-192x192.png`}
                 alt="Mumu Fashion"
                 className="h-8 w-8 md:h-10 md:w-10 object-contain"
               />

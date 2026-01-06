@@ -11,7 +11,7 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3 group">
               <div className="h-12 w-12 overflow-hidden rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                 <img
-                  src="/logos/android-chrome-192x192.png"
+                  src={`${import.meta.env.BASE_URL}logos/android-chrome-192x192.png`}
                   alt="Mumu Fashion"
                   className="h-10 w-10 object-contain brightness-0 invert"
                 />
