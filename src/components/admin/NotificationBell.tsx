@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Bell, Check, Settings, Trash2 } from 'lucide-react';
 import { useNotifications, Notification } from '@/contexts/NotificationContext';
+import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import {
   Popover,
@@ -22,6 +23,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const NotificationBell = () => {
   const { notifications, unreadCount, markAsRead, markAllAsRead, preferences, updatePreferences } = useNotifications();
+  const { isAdmin } = useAuth();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -102,6 +104,19 @@ export const NotificationBell = () => {
                 </div>
               )}
             </ScrollArea>
+            <div className="p-2 border-t text-center">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="w-full text-xs h-8"
+                onClick={() => {
+                  setOpen(false);
+                  navigate(isAdmin ? '/admin/notifications' : '/notifications');
+                }}
+              >
+                View all notifications
+              </Button>
+            </div>
           </TabsContent>
 
           <TabsContent value="settings" className="m-0 p-4 space-y-4">
@@ -117,28 +132,32 @@ export const NotificationBell = () => {
                   onCheckedChange={(checked) => updatePreferences({ sound_enabled: checked })}
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <Label htmlFor="new-user" className="flex flex-col gap-1">
-                  <span>New Users</span>
-                  <span className="font-normal text-xs text-muted-foreground">Notify when user joins</span>
-                </Label>
-                <Switch 
-                  id="new-user" 
-                  checked={preferences.notify_new_user}
-                  onCheckedChange={(checked) => updatePreferences({ notify_new_user: checked })}
-                />
-              </div>
-              <div className="flex items-center justify-between">
-                <Label htmlFor="orders" className="flex flex-col gap-1">
-                  <span>Orders</span>
-                  <span className="font-normal text-xs text-muted-foreground">Notify on new orders</span>
-                </Label>
-                <Switch 
-                  id="orders" 
-                  checked={preferences.notify_order_placed}
-                  onCheckedChange={(checked) => updatePreferences({ notify_order_placed: checked })}
-                />
-              </div>
+              {isAdmin && (
+                <>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="new-user" className="flex flex-col gap-1">
+                      <span>New Users</span>
+                      <span className="font-normal text-xs text-muted-foreground">Notify when user joins</span>
+                    </Label>
+                    <Switch 
+                      id="new-user" 
+                      checked={preferences.notify_new_user}
+                      onCheckedChange={(checked) => updatePreferences({ notify_new_user: checked })}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="orders" className="flex flex-col gap-1">
+                      <span>Orders</span>
+                      <span className="font-normal text-xs text-muted-foreground">Notify on new orders</span>
+                    </Label>
+                    <Switch 
+                      id="orders" 
+                      checked={preferences.notify_order_placed}
+                      onCheckedChange={(checked) => updatePreferences({ notify_order_placed: checked })}
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </TabsContent>
         </Tabs>

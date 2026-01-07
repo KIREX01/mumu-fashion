@@ -73,7 +73,48 @@ export const UserManager = () => {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">User Management</h2>
-      <div className="rounded-md border bg-card">
+
+      {/* Mobile View (Cards) */}
+      <div className="md:hidden space-y-4">
+        {isLoading ? (
+          <div className="text-center py-4">Loading users...</div>
+        ) : users?.length === 0 ? (
+          <div className="text-center py-8 text-muted-foreground">No users found.</div>
+        ) : users?.map((user) => {
+          const isAdmin = user.user_roles?.some((r: any) => r.role === 'admin');
+          return (
+            <div key={user.id} className="bg-card border rounded-lg p-4 space-y-3 shadow-sm">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="font-medium">{user.full_name || 'N/A'}</h3>
+                  <p className="text-sm text-muted-foreground">{user.email || 'N/A'}</p>
+                </div>
+                {isAdmin ? (
+                  <Badge variant="default" className="bg-primary text-primary-foreground text-[10px]">Admin</Badge>
+                ) : (
+                  <Badge variant="secondary" className="text-[10px]">User</Badge>
+                )}
+              </div>
+              
+              <div className="flex justify-between items-center pt-2 border-t">
+                <span className="text-xs text-muted-foreground">
+                  Joined {new Date(user.created_at).toLocaleDateString()}
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-medium">Admin Access</span>
+                  <Switch
+                    checked={isAdmin}
+                    onCheckedChange={(checked) => toggleAdmin.mutate({ userId: user.user_id, isAdmin: checked })}
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop View (Table) */}
+      <div className="rounded-md border bg-card hidden md:block">
         <Table>
           <TableHeader>
             <TableRow>

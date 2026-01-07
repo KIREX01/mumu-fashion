@@ -34,7 +34,12 @@ export const useUserOrders = () => {
         .from('orders')
         .select(`
           *,
-          order_items (*)
+          order_items (
+            *,
+            products (
+              image_url
+            )
+          )
         `)
         .eq('user_id', user.id)
         .order('created_at', { ascending: false });
@@ -56,7 +61,12 @@ export const useAllOrders = () => {
         .from('orders')
         .select(`
           *,
-          order_items (*)
+          order_items (
+            *,
+            products (
+              image_url
+            )
+          )
         `)
         .order('created_at', { ascending: false });
       
@@ -73,39 +83,21 @@ export const useCreateOrder = () => {
   
   return useMutation({
     mutationFn: async (orderData: CreateOrderData) => {
-      // Create order
-      const { data: order, error: orderError } = await supabase
-        .from('orders')
-        .insert({
-          user_id: user?.id,
-          customer_name: orderData.customerName,
-          customer_phone: orderData.customerPhone,
-          customer_address: orderData.customerAddress,
-          total_amount: orderData.totalAmount,
+      // Use secure RPC to create order
+      const { data, error } = await supabase.rpc('create_order', {
+        order_items_json: orderData.items,
+        customer_details: {
+          name: orderData.customerName,
+          phone: orderData.customerPhone,
+          address: orderData.customerAddress,
           notes: orderData.notes,
-        })
-        .select()
-        .single();
+          paymentMethod: 'cash', // Default or add to form
+          paymentReference: null
+        }
+      });
       
-      if (orderError) throw orderError;
-      
-      // Create order items
-      const orderItems = orderData.items.map(item => ({
-        order_id: order.id,
-        product_id: item.productId,
-        product_name: item.productName,
-        product_price: item.productPrice,
-        size: item.size,
-        quantity: item.quantity,
-      }));
-      
-      const { error: itemsError } = await supabase
-        .from('order_items')
-        .insert(orderItems);
-      
-      if (itemsError) throw itemsError;
-      
-      return order;
+      if (error) throw error;
+      return data;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['orders'] });

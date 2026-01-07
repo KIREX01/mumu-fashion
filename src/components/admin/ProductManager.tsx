@@ -273,7 +273,57 @@ export const ProductManager = () => {
         </Dialog>
       </div>
 
-      <div className="rounded-md border">
+      {/* Mobile View (Cards) */}
+      <div className="md:hidden space-y-4">
+        {isLoading ? (
+          <div className="text-center py-4">Loading...</div>
+        ) : products?.map((product) => (
+          <div key={product.id} className="bg-card border rounded-lg overflow-hidden shadow-sm">
+            <div className="flex p-4 gap-4">
+              <div className="h-20 w-20 flex-shrink-0 bg-muted rounded overflow-hidden">
+                {product.image_url ? (
+                  <img src={product.image_url} alt={product.name} className="h-full w-full object-cover" />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center">
+                    <ImageIcon className="h-8 w-8 text-muted-foreground" />
+                  </div>
+                )}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex justify-between items-start">
+                  <h3 className="font-medium truncate pr-2">{product.name}</h3>
+                  <div className="flex flex-col items-end">
+                    <span className="font-bold text-sm">{product.price.toLocaleString()} BIF</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground capitalize mt-1">{product.category}</p>
+                
+                <div className="flex justify-between items-center mt-3">
+                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium ${product.in_stock ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    {product.in_stock ? 'In Stock' : 'Out of Stock'}
+                  </span>
+                  
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="h-8 w-8 p-0" onClick={() => handleEdit(product)}>
+                      <Pencil className="h-3.5 w-3.5" />
+                    </Button>
+                    <Button variant="outline" size="sm" className="h-8 w-8 p-0 text-destructive hover:text-destructive" onClick={() => {
+                      if (confirm('Are you sure you want to delete this product?')) {
+                        deleteMutation.mutate(product.id);
+                      }
+                    }}>
+                      <Trash className="h-3.5 w-3.5" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop View (Table) */}
+      <div className="rounded-md border hidden md:block">
         <Table>
           <TableHeader>
             <TableRow>

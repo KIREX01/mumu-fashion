@@ -3,8 +3,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/components/ui/use-toast';
 
-// Simple notification sound (base64 MP3 of a "ding")
-const NOTIFICATION_SOUND = 'data:audio/mp3;base64,//NExAAAAANIAAAAAExBTUUzLjEwMKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NExAAAAANIAAAAAExBTUUzLjEwMKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NExAAAAANIAAAAAExBTUUzLjEwMKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NExAAAAANIAAAAAExBTUUzLjEwMKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NExAAAAANIAAAAAExBTUUzLjEwMKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq';
+// Notification sound URL
+const SOUND_URL = 'https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3';
+
 
 export type NotificationType = 'new_user' | 'order_placed' | 'payment_failed';
 
@@ -49,7 +50,7 @@ export const NotificationProvider = ({ children }: { children: React.ReactNode }
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(NOTIFICATION_SOUND);
+    audioRef.current = new Audio(SOUND_URL);
   }, []);
 
   const playSound = () => {
@@ -74,7 +75,7 @@ export const NotificationProvider = ({ children }: { children: React.ReactNode }
   };
 
   const fetchPreferences = async () => {
-    if (!user) return;
+    if (!user || !isAdmin) return;
     const { data } = await supabase
       .from('admin_preferences')
       .select('*')
@@ -95,14 +96,16 @@ export const NotificationProvider = ({ children }: { children: React.ReactNode }
   };
 
   useEffect(() => {
-    if (!isAdmin || !user) return;
+    if (!user) return;
 
     fetchNotifications();
-    fetchPreferences();
+    if (isAdmin) {
+      fetchPreferences();
+    }
 
     // Subscribe to realtime changes
     const channel = supabase
-      .channel('admin-notifications')
+      .channel('user-notifications')
       .on(
         'postgres_changes',
         {
@@ -126,7 +129,7 @@ export const NotificationProvider = ({ children }: { children: React.ReactNode }
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [isAdmin, user, preferences.sound_enabled]); // Re-subscribe if sound pref changes to ensure state is fresh? No, sound is read from ref/state
+  }, [isAdmin, user, preferences.sound_enabled]);
 
   const markAsRead = async (id: string) => {
     setNotifications(prev => prev.map(n => n.id === id ? { ...n, is_read: true } : n));
@@ -143,13 +146,15 @@ export const NotificationProvider = ({ children }: { children: React.ReactNode }
     setPreferences(prev => ({ ...prev, ...newPrefs }));
     if (!user) return;
     
-    // Check if record exists first (handled in fetch, but safe to upsert)
-    const { error } = await supabase
-      .from('admin_preferences')
-      .upsert({ user_id: user.id, ...newPrefs });
-      
-    if (error) {
-      console.error('Error saving preferences', error);
+    // Only save to DB if admin, otherwise keep in local state for session
+    if (isAdmin) {
+        const { error } = await supabase
+        .from('admin_preferences')
+        .upsert({ user_id: user.id, ...newPrefs });
+        
+        if (error) {
+        console.error('Error saving preferences', error);
+        }
     }
   };
 

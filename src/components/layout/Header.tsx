@@ -88,15 +88,15 @@ export const Header = () => {
               <GlobalSearch />
             </div>
 
-            {/* Admin Quick Link & Notifications */}
+            {/* Admin Quick Link */}
             {isAdmin && (
-              <>
-                <Button asChild variant="outline" size="sm" className="hidden xl:flex border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                  <Link to="/admin">Admin</Link>
-                </Button>
-                <NotificationBell />
-              </>
+              <Button asChild variant="outline" size="sm" className="hidden xl:flex border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                <Link to="/admin">Admin</Link>
+              </Button>
             )}
+
+            {/* Notifications for all logged in users */}
+            {user && <NotificationBell />}
 
             {/* User Menu */}
             {user ? (

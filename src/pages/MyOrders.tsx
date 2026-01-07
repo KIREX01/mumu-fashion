@@ -77,16 +77,36 @@ const MyOrders = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="space-y-4">
                       {order.order_items.map((item: any) => (
                         <div key={item.id} className="flex justify-between items-center text-sm">
-                          <div className="flex items-center gap-2">
-                            <div className="bg-muted h-8 w-8 rounded flex items-center justify-center text-xs text-muted-foreground">
-                              {item.quantity}x
+                          <div className="flex items-center gap-3">
+                            <div className="h-12 w-12 rounded overflow-hidden border bg-muted flex-shrink-0">
+                                {item.products?.image_url ? (
+                                    <img 
+                                        src={item.products.image_url} 
+                                        alt={item.product_name} 
+                                        className="h-full w-full object-cover"
+                                    />
+                                ) : (
+                                    <div className="h-full w-full flex items-center justify-center text-xs text-muted-foreground">
+                                        No Img
+                                    </div>
+                                )}
                             </div>
-                            <span>{item.product_name} <span className="text-muted-foreground">({item.size})</span></span>
+                            <div className="flex flex-col">
+                                <div className="flex items-center gap-2">
+                                    <span className="font-medium">{item.product_name}</span>
+                                    <span className="text-xs bg-secondary px-1.5 py-0.5 rounded text-muted-foreground">
+                                        x{item.quantity}
+                                    </span>
+                                </div>
+                                <span className="text-muted-foreground text-xs">
+                                    Size: {item.size} {item.color && `• Color: ${item.color}`}
+                                </span>
+                            </div>
                           </div>
-                          <span>{formatPrice(item.product_price * item.quantity)}</span>
+                          <span className="font-medium">{formatPrice(item.product_price * item.quantity)}</span>
                         </div>
                       ))}
                     </div>

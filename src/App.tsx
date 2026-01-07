@@ -25,6 +25,8 @@ const Wishlist = lazy(() => import("./pages/Wishlist"));
 const MyOrders = lazy(() => import("./pages/MyOrders"));
 const Checkout = lazy(() => import("./pages/Checkout"));
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
+const AdminNotifications = lazy(() => import("./pages/admin/Notifications"));
+const Notifications = lazy(() => import("./pages/Notifications"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
@@ -64,6 +66,8 @@ const App = () => (
                     <Route path="/orders" element={<MyOrders />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/admin" element={<AdminDashboard />} />
+                    <Route path="/admin/notifications" element={<AdminNotifications />} />
+                    <Route path="/notifications" element={<Notifications />} />
 
                     {/* Legal Routes */}
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
