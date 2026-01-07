@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mumu Fashion Design System - Elegance Redefined */
+/* Mumu Store Design System - Elegance Redefined */
 
 @layer base {
   :root {
@@ -38,7 +38,7 @@
 
     --radius: 0.5rem;
 
-    /* Custom Mumu Fashion tokens */
+    /* Custom Mumu Store tokens */
     --gold: 38 70% 50%;
     --gold-light: 38 65% 65%;
     --navy: 220 35% 18%;

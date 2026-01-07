@@ -42,7 +42,7 @@ export const Header = () => {
             <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
               <img
                 src={`${import.meta.env.BASE_URL}logos/android-chrome-192x192.png`}
-                alt="Mumu Fashion"
+                alt="Mumu Store"
                 className="h-8 w-8 md:h-10 md:w-10 object-contain"
               />
             </div>
@@ -51,7 +51,7 @@ export const Header = () => {
                 Mumu
               </span>
               <span className="font-serif text-xs md:text-sm text-accent font-medium tracking-widest uppercase">
-                Style Shop
+                Store
               </span>
             </div>
           </Link>
@@ -75,7 +75,7 @@ export const Header = () => {
           {/* Actions */}
           <div className="flex items-center gap-2 md:gap-4">
             <a
-              href="https://wa.me/25769966695"
+              href="https://wa.me/25764057443"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
@@ -252,7 +252,7 @@ export const Header = () => {
 
                 <div className="mt-auto space-y-4">
                   <a
-                    href="https://wa.me/25769966695"
+                    href="https://wa.me/25764057443"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"

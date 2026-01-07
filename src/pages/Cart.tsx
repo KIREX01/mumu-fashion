@@ -27,14 +27,14 @@ const Cart = () => {
     const itemsList = items
       .map(
         item =>
-          `- ${item.product.name} (Size: ${item.size}, Qty: ${item.quantity}) - ${formatPrice(item.product.price * item.quantity)}`
+          `- ${item.product.name} (Size: ${item.size}, Qty: ${item.quantity}) - ${formatPrice(item.product.price * item.quantity)}\n  Image: ${item.product.image_url || 'No image'}`
       )
-      .join('\n');
+      .join('\n\n');
 
     const message = encodeURIComponent(
-      `Hello! I would like to place an order:\n\n${itemsList}\n\nTotal: ${formatPrice(totalPrice)}\n\nPlease confirm availability and delivery details.`
+      `Hello! I would like to place an order from Mumu Store:\n\n${itemsList}\n\nTotal: ${formatPrice(totalPrice)}\n\nPlease confirm availability and delivery details.`
     );
-    window.open(`https://wa.me/25769966695?text=${message}`, '_blank');
+    window.open(`https://wa.me/25764057443?text=${message}`, '_blank');
   };
 
   if (items.length === 0) {
@@ -211,8 +211,8 @@ const Cart = () => {
                   <p className="text-sm text-muted-foreground mb-2">
                     Payment via Lumicash
                   </p>
-                  <p className="font-medium text-foreground">Muganga Patience</p>
-                  <p className="text-accent font-bold">69966695</p>
+                  <p className="font-medium text-foreground">Mumu Store</p>
+                  <p className="text-accent font-bold">64057443</p>
                 </div>
               </div>
 

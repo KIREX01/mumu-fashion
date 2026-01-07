@@ -77,7 +77,7 @@ const Auth = () => {
         } else {
           toast({
             title: 'Account Created!',
-            description: 'Welcome to Mumu Fashion. You are now signed in.',
+            description: 'Welcome to Mumu Store. You are now signed in.',
           });
           navigate('/');
         }
@@ -141,7 +141,7 @@ const Auth = () => {
               </h1>
               <p className="text-muted-foreground text-sm mt-2">
                 {isSignUp
-                  ? 'Join Mumu Fashion and start shopping'
+                  ? 'Join Mumu Store and start shopping'
                   : 'Sign in to access your account'}
               </p>
             </div>

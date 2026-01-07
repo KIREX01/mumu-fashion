@@ -11,7 +11,7 @@ export const FloatingWhatsApp = () => {
     }, []);
 
     const handleWhatsAppClick = () => {
-        window.open(`https://wa.me/25769966695`, '_blank');
+        window.open(`https://wa.me/25764057443`, '_blank');
     };
 
     return (

@@ -12,7 +12,7 @@ export const Footer = () => {
               <div className="h-12 w-12 overflow-hidden rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                 <img
                   src={`${import.meta.env.BASE_URL}logos/android-chrome-192x192.png`}
-                  alt="Mumu Fashion"
+                  alt="Mumu Store"
                   className="h-10 w-10 object-contain brightness-0 invert"
                 />
               </div>
@@ -21,7 +21,7 @@ export const Footer = () => {
                   Mumu
                 </span>
                 <span className="font-serif text-xs text-gold font-medium tracking-widest uppercase">
-                  Style Shop
+                  Store
                 </span>
               </div>
             </Link>
@@ -73,13 +73,13 @@ export const Footer = () => {
             <h4 className="font-serif text-lg font-semibold mb-4 text-gold">Contact</h4>
             <div className="space-y-4">
               <a
-                href="https://wa.me/25769966695"
+                href="https://wa.me/25764057443"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-gold transition-colors group"
               >
                 <MessageCircle className="w-5 h-5 mt-0.5 shrink-0 group-hover:text-gold transition-colors" />
-                <span>WhatsApp: +257 69 96 66 95</span>
+                <span>WhatsApp: +257 64 05 74 43</span>
               </a>
               <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
                 <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
@@ -99,9 +99,9 @@ export const Footer = () => {
               <p>Secure mobile payments via Lumicash:</p>
               <div className="bg-white/5 rounded-lg p-4 border border-white/10 hover:border-gold/50 transition-colors">
                 <p className="font-medium text-primary-foreground">
-                  Muganga Patience
+                  Mumu Store
                 </p>
-                <p className="text-gold font-semibold text-lg tracking-wide">69966695</p>
+                <p className="text-gold font-semibold text-lg tracking-wide">64057443</p>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/50">
-            © {new Date().getFullYear()} Mumu Fashion. All rights reserved.
+            © {new Date().getFullYear()} Mumu Store. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link to="/privacy-policy" className="text-xs text-primary-foreground/50 hover:text-gold transition-colors">

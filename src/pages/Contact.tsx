@@ -74,13 +74,19 @@ const Contact = () => {
                 {isSending ? 'Sending...' : 'Send Message'}
               </Button>
 
-              <a
-                href="https://wa.me/25769966695"
-                target="_blank"
+              <a 
+                href="https://wa.me/25764057443" 
+                target="_blank" 
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-accent"
+                className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors group"
               >
-                Contact via WhatsApp
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center group-hover:bg-accent/10 transition-colors">
+                  <MessageCircle className="w-5 h-5 text-accent" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-muted-foreground">WhatsApp</span>
+                  <span className="text-sm font-medium text-foreground">+257 64 05 74 43</span>
+                </div>
               </a>
             </div>
           </form>
